@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/raleway/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div.email-accepted div.card-header{
+    background-color: rgb(5,125,53);
+}
+
+div.email-refused div.card-header{
+    background-color: rgb(193,57,43);
+}
+
+div.retry-email div.card-header{
+    background-color: rgb(53,152,220);
+}
+
+div.retry-email a{
+    background-color: rgb(53,152,220);
+    border-color: rgb(53,152,220);
+}

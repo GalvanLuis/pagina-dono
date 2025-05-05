@@ -1,0 +1,278 @@
+{{!-- Slider --}}
+
+<div class="container-slider mx-auto pt-5">
+    <input type="radio" id="1" name="image-slide" hidden>
+    <input type="radio" id="2" name="image-slide" hidden>
+    <input type="radio" id="3" name="image-slide" hidden>
+
+    <div class="slide">
+        <div class="item-slide">
+            <img src="/img/slider1.jpg">
+        </div>
+
+        <div class="item-slide">
+            <img src="/img/slider4.jpg">
+        </div>
+
+        <div class="item-slide">
+            <img src="/img/slider5.jpg">
+        </div>
+    </div>
+
+    <div class="pagination">
+        <label for="1" class="pagination-item">
+            <img src="/img/slider1.jpg">
+        </label>
+
+        <label for="2" class="pagination-item">
+            <img src="/img/slider4.jpg">
+        </label>
+
+        <label for="3" class="pagination-item">
+            <img src="/img/slider5.jpg">
+        </label>
+    </div>
+</div>
+
+
+{{!-- Centro --}}
+
+<div class="card mx-auto cardHomePage" style="padding: 0% 5% 5% 5%;">
+    <div class="row g-0">
+        <div class="col-sm-6 col-12">
+            <div class="card-body pt-0">
+                <h5 class="card-title" style="font-size: 2.5vw;">
+                    <b>
+                        Los cursos de la Academia Virtual de Lengua de Señas te ofrecen:
+                    </b>
+                </h5>
+                
+                <ul class="card-text" style="font-size: 1.9vw; padding-left: 5vw;">
+                    <li class="pt-5">Cursos 100% en línea o presencial</li>
+                    <li class="pt-5">Intérpretes altamente calificados que te enseñarán todo lo relacionado a la Lengua de Señas Mexicana</li>
+                    <li class="pt-5">Plan de estudios diseñados por niveles para fortalecer tus conocimientos</li>
+                    <li class="pt-5">Ejercicios que te servirán para mejorar tu comunicación</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6 col-12">
+            <img src="/img/slider3.jpg" class="img-fluid rounded-start">
+        </div>
+    </div>
+</div>
+
+
+
+{{!-- Planes y Servicios --}}
+<div class="container-plans" style="background: linear-gradient(180deg, #a0e8fc 0%, #ffffff 100%);">
+{{!-- <div class="container-plans" style="background: linear-gradient(180deg, #bbcfee 0%, #ffffff 100%);"> --}}
+  {{!-- <div class="container-fluid" style="background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);"> --}}
+    {{!-- <div class="container-fluid" style="background: linear-gradient(90deg, #72c5db 0%, #e8fc3a 100%);"> --}}
+    <div class="text-center opensans" style="margin-top: 5vw;padding-top: 3vw;">
+        <h1 style="font-weight: bold; color: #23085a">Nuestros Planes</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <div class="card-header in-person">
+                            <div class="text-center pt-3">
+                                <h3 class="card-title pb-3" style="font-size: max(30px, min(2.5vw, 150px));">Presencial</h3>
+                                <span class="h2">$8</span>mxn/mes
+                                <br><br>
+                            </div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="card-body ps-5 pe-5">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Cras justo odio
+                                </li>
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Dapibus ac facilisis in
+                                </li>
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Vestibulum at eros
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-outline btn-in-person w-100">Select</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <div class="card-header online">
+                            <div class="text-center pt-3">
+                                <h3 class="card-title pb-3" style="font-size: max(30px, min(2.5vw, 150px));">Virtual</h3>
+                                <span class="h2">$20</span>/mes
+                                <br><br>
+                            </div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="card-body ps-5 pe-5">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item ps-0 pe-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Cras justo odio
+                                </li>
+                                <li class="list-group-item ps-0 pe-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Dapibus ac facilisis in
+                                </li>
+                                <li class="list-group-item ps-0 pe-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Vestibulum at eros
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-outline btn-online w-100">Select</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="card h-100 shadow-lg">
+                        <div class="card-header self">
+                            <div class="text-center pt-3">
+                                <h3 class="card-title pb-3" style="font-size: max(30px, min(2.5vw, 150px));">Autónomo</h3>
+                                <span class="h2">$40</span>mxn/mes
+                                <br><br>
+                            </div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="card-body ps-5 pe-5">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Cras justo odio
+                                </li>
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Dapibus ac facilisis in
+                                </li>
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Vestibulum at eros
+                                </li>
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Vestibulum at eros
+                                </li>
+                                <li class="list-group-item ps-0 pe-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg> Vestibulum at eros
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#" class="btn btn-outline btn-self w-100">Select</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+
+
+<div class="container-teachers">
+    <div class="text-center opensans" style="margin-top: 5vw;padding-top: 3vw; margin-bottom: 4vw;">
+        <h1 style="font-weight: bold;">Conoce a nuestros Intérpretes</h1>
+    </div>
+
+    <div class="row row-cols-md-4 row-cols-sm-2 row-cols-1" style="padding-left: 7rem; padding-right: 4rem;">
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Card title</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div>
+        {{!-- <div class="col">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div> --}}
+    </div>
+
+    <div class="row row-cols-md-4 row-cols-sm-2 row-cols-1" style="padding-left: 7rem; padding-right: 4rem;">
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Card title</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-5">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div>
+        {{!-- <div class="col">
+            <div class="card mx-auto" style="border-radius: 1.5rem 1.5rem 0 0; max-width: 200px; height:auto">
+                <img src="/img/guillermo.jpg" class="card-img-top" style="max-width: 100%; border-radius: 1.5rem 1.5rem 0 0;">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Guillermo</h3>
+                </div>
+            </div>
+        </div> --}}
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "logged": true,
+    "menu_icon": "bi bi-menu-button-wide",
+    "logo": {
+        "src": "/img/SAS_logo.jpg",
+        "href": "/homepage",
+        "space": "pe-1"
+    },
+    "search_box": "bi bi-search",
+    "nav_items": {
+        "Notificaciones": {"link": "example2", "icon": "bi bi-bell", "space": "ms-auto"},
+        "Mensajes": {"link": "example", "icon": "bi bi-envelope"}
+    },
+    "profile": {
+        "img": null,
+        "dropdown_items": {
+            "Configuración": "link",
+            "Mi cuenta": "link",
+            "Cerrar Sesión": "/logout"
+        }
+    }
+}

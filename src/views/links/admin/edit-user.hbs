@@ -1,0 +1,190 @@
+<div class="row w-100">
+    {{> sidebar}}
+
+    <div class="col-6 mx-auto">
+        <div class="container container-fluid ps-0 pt-4">
+            <div class="card">
+                <div class="card-body p-5" style="border-bottom: 0 !important">
+                    <form action="edit-user/{{userData.id_usuario}}" method="POST" id="edit-user-form"
+                        class="was-validated">
+
+                        <div class="row">
+                            <div class="h4 pb-3 ps-0">
+                                Información Básica del usuario
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-auto d-flex align-items-center">
+                                <img src="/img/guillermo.jpg" alt="" width="120" height="120"
+                                    class="rounded-circle border border-dark" />
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label">
+                                                <b>ID usuario:</b> {{userData.id_usuario}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ps-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label">
+                                                <b>ID stripe:</b> {{userData.id_stripe}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="nameValidation">
+                                                <b>Nombre(s)</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="text" name="name" id="nameValidation" placeholder="Nombre(s)"
+                                                class="form-control" value="{{userData.nombre}}" required>
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ps-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="lastnameValidation">
+                                                <b>Apellido(s)</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="text" name="last_name" id="lastnameValidation"
+                                                placeholder="Apellido(s)" class="form-control"
+                                                value="{{userData.apellido}}" required>
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="sup-phone-number">
+                                                <b>Número de Telefono</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="tel" name="phone" id="sup-phone-number" class="form-control"
+                                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890"
+                                                maxlength="12" value="{{userData.telefono}}" required>
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ps-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="emailValidation">
+                                                <b>Correo Electrónico</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="email" name="email" id="emailValidation"
+                                                placeholder="Correo Electrónico" class="form-control"
+                                                pattern="^(?!.*\.\.)[a-zA-Z._%]+[a-zA-Z0-9.]{0,}@[a-zA-Z.]+\.[a-zA-Z]+"
+                                                value="{{userData.correo_electronico}}" required>
+                                            <div class="invalid-feedback">
+                                                Correro electrónico no valido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label">
+                                                <b>Verificado:</b>
+
+                                                {{#if userData.validado}}
+                                                <input name="validated" type="checkbox" value="0"
+                                                    style="display: none;" />
+                                                <input name="validated" type="checkbox" class="form-check-input"
+                                                    value="1" checked />
+                                                {{else}}
+                                                <input name="validated" type="checkbox" value="0"
+                                                    style="display: none;" />
+                                                <input name="validated" type="checkbox" class="form-check-input"
+                                                    value="1" />
+                                                {{/if}}
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="form-label">
+                                                <b>Se registró el:</b> {{date_ userData.fecha_creado}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-auto me-auto">
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                            data-bs-target="#confirmDeleteUser">
+                                            Eliminar usuario
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn btn-primary">Guardar cambios</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="row">
+                            <div class="h4 pb-3 ps-0">
+                                Información Avanzada del usuario
+                            </div>
+                        </div>
+                    </form>
+
+                    {{#if advancedUserData.usuario}}
+                    {{> advanced_user_data}}
+                    {{/if}}
+
+                    {{#if advancedUserData.alumno}}
+                    SOY UN ESTUDIANTE
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmDeleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar a este usuario?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="delete-user?id={{userData.id_usuario}}" method="post">
+                    <button class="btn btn-danger">Eliminar</button>
+                    {{!-- <a href="delete-user?id={{userData.id_usuario}}" class="btn btn-danger">Eliminar</a> --}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/left_sidebar.js" type="text/javascript"></script>

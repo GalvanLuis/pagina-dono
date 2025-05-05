@@ -1,0 +1,121 @@
+<div class="row w-100">
+    {{> sidebar}}
+
+    <div class="col-6 mx-auto">
+        <div class="container container-fluid ps-0 pt-4">
+            <div class="card">
+                <div class="card-body p-5" style="border-bottom: 0 !important">
+                    <form action="edit-classroom/{{usersData.id_classroom}}" method="POST" id="edit-classroom-form"
+                        class="was-validated">
+
+                        <div class="row">
+                            <div class="h4 pb-3 ps-0">
+                                Editar información del Salon
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="nameValidation">
+                                                <b>Nombre del Salon</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="text" name="classroom_name" id="classroom_name" placeholder="Nombre del Salon"
+                                                class="form-control" value="{{usersData.classroom_name}}" required>
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ps-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="namevalidation">
+                                                <b>Horario de las clases</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="text" name="classroom_teacher" id="plan-cost" class="form-control"
+                                                placeholder="ex: Lunes a Viernes de 8:00pm a 10:00pm"
+                                                value="{{usersData.schedule}}" required type="text">                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="sup-phone-number">
+                                                <b>Agregar profesor</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="text" name="classroom_teacher" id="classroom_teacher" class="form-control"
+                                                placeholder="ex: Tomas Tavera"
+                                                value="{{usersData.classroom_teacher}}" required type="text">
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 pe-4">
+                                        <div class="form-group p-3">
+                                            <label class="form-label">
+                                                <b>Zoom URL:</b>
+                                            </label>
+                                            <input type="text" name="zoom_url" id="zoom_url" class="form-control"
+                                                placeholder="https://zoom.us/j/1234567890"
+                                                value="{{usersData.zoom_url}}">                                        
+                                        </div>
+                                     </div>
+                                <div class="row">
+
+                                    <div class="col-auto me-auto">
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteClassroom">
+                                            Borrar Salon
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-secondary" onclick="window.history.back();">
+                                            Volver
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-primary" formaction="edit-classroom/{{usersData.id_classroom}}" formmethod="POST">
+                                            Guardar cambios
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmDeleteClassroom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas borrar el salon? Se perderán los cambios realizados.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="delete-classroom?id={{usersData.id_classroom}}" method="post">
+                    <button class="btn btn-danger">Aceptar</button>
+                    {{!-- <a href="delete-user?id={{usersData.id_usuario}}" class="btn btn-danger">Eliminar</a> --}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/admin_add_plan.js" type="text/javascript"></script>

@@ -1,0 +1,174 @@
+{{!-- <div class="container p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Editar Usuario</h3>
+                    <p class="text-muted">
+                        En caso de no querer cambiar la Contraseña, dejar los espacios en blanco
+                    </p>
+                </div>
+                <div class="card-body">
+                    <form action="/links/edit/{{link.id}}" method="POST">
+                        {{#if (not_ link.area 'Director')}}
+                        <div class="form-group p-2">
+                            <input class="form-control" type="text" value="{{link.area}}" name="area" id="Usuario" placeholder="Area" autofocus>
+                        </div>
+                        {{/if}}
+                        <div class="form-group p-2">
+                            <input class="form-control" type="password" value="" name="contrs" placeholder="Contraseña">
+                        </div>
+                        <div class="form-group p-2">
+                            <input class="form-control" type="password" value="" name="confirm_contrs" placeholder="Confirmar Contraseña">
+                        </div>
+                        <p class="mt-2">tipo de acceso para el usuario
+                            <select class="" name="acceso">
+                                <option value="none">ninguno</option>
+                                <option value="folio">folio</option>
+                                <option value="oficio">oficio</option>
+                                <option value="all">ambos</option>
+                            </select>
+                        </p>
+                        <div class="form-group p-2">
+                            <div class="d-grid">
+                                <input class="btn btn-success" type="submit" value="Guardar">
+                            </div>
+                        </div>
+                    </form>
+                </div> 
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Editar Usuario</h3>
+                    <p><strong>Instrucciones de uso:</strong></p>
+                    <ul>
+                        <li class="text-start">
+                            <strong>Editar Area:</strong> Para editar el area del usuario, seleccione dentro del menú desplegable <strong>"Area"</strong> el area donde 
+                            el usuario va a trabajar. Por defecto ya viene seleccionado el area donde actualmente está trabajando.
+                        </li>
+                        <li class="pt-4 text-start">
+                            <strong>Editar Acceso:</strong> Para editar el nivel de acceso, seleccione dentro del menú desplegable <strong>"Nivel de Acceso"</strong> el nivel
+                            de acceso que contará el usuario. Por defecto ya viene seleccionado el nivel de acceso que actualmente tiene el usuario.
+                        </li>
+                        <li class="pt-4 text-start">
+                            <strong>Editar Contraseña:</strong> Para editar la contraseña, escriba la nueva contraseña en ambos cuadros de textos (<strong>Contraseña</strong>, <strong>Confirmar Contraseña</strong>). 
+                            En caso de no querer cambiar la contraseña, deje ambos espacios vacios.
+                        </li>
+                    </ul>
+                    <p>Para finalizar, presione el botón de "Editar" localizado abajo a la izquierda del formulario. </p>
+                </div>
+
+                <div class="card-body">
+                    <form action="/links/edit/{{id}}" method="POST" class="row-fluid row-cols-lg-auto g-3">
+                        <div class="row ps-5 pt-4 add-user"> 
+                            <div class="col-12 col-sm-6">
+                                <div class="row pt-4">
+                                    <p class="col-auto text-start"><strong>Area</strong></p>
+                                    <div class="row g-0 ps-2">
+                                        <div class="input-group-text d-none d-sm-block col-sm-auto">
+                                            <span class="input-group-addon"><i class="bi bi-list-task"></i></span>
+                                        </div>
+                                        
+                                        <div class="form-group col-12 col-sm-9 col-md-10 col-xl-10">
+                                            <select class="form-select" name="id_area">
+                                                {{#each areas}}
+                                                    {{#if (IF area ../link.area)}}
+                                                        <option value={{id}} selected>{{area}}</option>
+                                                    {{else}}
+                                                        <option value={{id}}>{{area}}</option>
+                                                    {{/if}}
+                                                {{/each}}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+                            <div class="col-12 col-sm-6">
+                                <div class="row pt-4">
+                                    <p class="col-auto text-start ps-2"><strong>Nivel de acceso</strong></p>
+                                    <div class="row g-0 ps-2">
+                                        <div class="input-group-text d-none d-sm-block col-sm-auto">
+                                            <span class="input-group-addon"><i class="bi bi-list-task"></i></span>
+                                        </div>
+                                        
+                                        <div class="form-group col-12 col-sm-9 col-md-10 col-xl-10">
+                                            <select class="form-select" name="id_tipo_usuario">
+                                                {{#each acceso}}
+                                                    {{#if (IF tipo_usuario ../link.tipo_usuario)}}
+                                                        <option value={{id}} selected>{{tipo_usuario}}</option>
+                                                    {{else}}
+                                                        <option value={{id}}>{{tipo_usuario}}</option>
+                                                    {{/if}} 
+                                                {{/each}}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="row ps-5 pt-5 add-user">
+                            <div class="col-12 col-sm-6">
+                                <div class="row pt-4">
+                                    <p class="col-auto"><strong>Contraseña</strong>:</p>
+                                    <div class="row g-0 ps-2">
+                                        <div class="input-group-text d-none d-sm-block col-sm-auto">
+                                            <span class="input-group-addon"><i class="bi bi-lock"></i></span>
+                                        </div>
+
+                                        <div class="form-group col-12 col-sm-9 col-md-10 col-xl-10">
+                                            <input class="form-control" type="password" name="contrs"  id="Contraseña" placeholder="Contraseña">
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="row pt-4">
+                                    <p class="col-auto"><strong>Confirmar Contraseña</strong>:</p>
+                                    <div class="row g-0 ps-2">
+                                        <div class="input-group-text d-none d-sm-block col-sm-auto">
+                                            <span class="input-group-addon"><i class="bi bi-lock"></i></span>
+                                        </div>
+
+                                        <div class="form-group col-12 col-sm-9 col-md-10 col-xl-10">
+                                            <input class="form-control" type="password" name="confirm_contrs"  id="Contraseña2" placeholder="Contraseña">
+                                        </div>
+                                    </div>                            
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="row ps-5 pt-5 add-user">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="form-group col-auto">
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                            <input class="btn btn-primary" type="submit" value="Editar">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

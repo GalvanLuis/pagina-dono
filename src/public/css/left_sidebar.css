@@ -1,0 +1,51 @@
+div.lsidebar {
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 0.3s ease-in;
+    width: 220px;
+    margin-left: 2.8rem !important;
+    /* margin-top: 1.6rem !important; */
+    margin-right: 1.5rem !important;
+    /* height: 100% !important;    */
+}
+
+a.lsidebar-item i, a.lsidebar-item div.lsidebar-tab{
+    display: inline-block;
+    vertical-align: middle;
+    transition: 0.3s;
+}
+
+
+div.hidden.lsidebar {
+    transition: 0.3s;
+    width: 3rem !important;
+}
+
+.lsidebar-item {
+    color: black !important;
+    border-color: transparent !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.lsidebar-item.active {
+    background-color: rgb(191, 191, 191) !important;
+    /* color: black !important; */
+}
+
+/* .lsidebar a.nav-link:hover {
+    background-color: gray !important;
+}
+
+.lsidebar a.nav-link.active:hover {
+    background-color: rgb(191, 191, 191) !important;
+} */
+
+.lsidebar a.nav-link:hover i{
+    color: black !important;
+    outline: 0;
+}
+
+#lsidebar-button {
+    background: rgb(221, 221, 221) !important;
+}

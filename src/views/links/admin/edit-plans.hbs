@@ -1,0 +1,143 @@
+<div class="row w-100">
+    {{> sidebar}}
+
+    <div class="col-6 mx-auto">
+        <div class="container container-fluid ps-0 pt-4">
+            <div class="card">
+                <div class="card-body p-5" style="border-bottom: 0 !important">
+                    <form action="edit-plans/{{usersData.id_plan}}" method="POST" id="edit-plans-form"
+                        class="was-validated">
+
+                        <div class="row">
+                            <div class="h4 pb-3 ps-0">
+                                Editar la información del plan
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="nameValidation">
+                                                <b>Nombre del plan</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="text" name="name" id="nameValidation" placeholder="Nombre del plan (obigatorio)"
+                                                class="form-control" value="{{usersData.name}}" required>
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ps-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="dateValidation">
+                                                <b>Fecha</b>    
+                                            </label>
+                                            <input type="date" name="date" id="dateValidation" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="sup-phone-number">
+                                                <b>Descripción del plan</b>
+                                            </label>
+                                            <input type="text" name="description" id="plan-description" class="form-control"
+                                                placeholder="Ingrese una descripción (opcional)"
+                                                value="{{usersData.description}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 ps-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="sup-phone-number">
+                                                <b>Costo del plan</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="number" name="cost" id="plan-cost" class="form-control"
+                                                placeholder="Ingrese el costo del plan (opcional)"
+                                                value="{{usersData.price}}" required>
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 pe-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="sup-phone-number">
+                                                <b>Duracion del plan</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <input type="number" name="duration" id="plan-duration" class="form-control"
+                                                placeholder="Ingrese la duracion del plan (opcional)"
+                                                value="{{usersData.duration}}" required>
+                                            <div class="invalid-feedback">
+                                                No puede ir vacio este campo
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ps-0">
+                                        <div class="form-group p-2">
+                                            <label class="form-label" for="sup-phone-number">
+                                                <b>Estatus del plan</b>
+                                                <span style="color: red;">*</span>
+                                            </label>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="isActivated" id="plan-activated" class="form-check-input" {{#if usersData.is_activated}}checked{{/if}}>
+                                                <label class="form-check-label" for="plan-activated">Activado</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto me-auto">
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeletePlan">
+                                            Borrar Plan
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-secondary" onclick="window.history.back();">
+                                            Volver
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-primary" formaction="edit-plans/{{usersData.id_plan}}" formmethod="POST">
+                                            Guardar cambios
+                                        </button>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmDeletePlan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar este plan?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="delete-plan?id={{usersData.id_plan}}" method="post">
+                    <button class="btn btn-danger">Aceptar</button>
+                    " class="btn btn-danger">Eliminar</a> --}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/admin_add_plan.js" type="text/javascript"></script>        

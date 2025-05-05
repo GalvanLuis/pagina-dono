@@ -1,0 +1,113 @@
+{
+    "Presencial": [
+        {
+            "precio": 8,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "in-person",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        },
+        {
+            "precio": 20,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "in-person",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        },
+        {
+            "precio": 40,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros",
+                "Vestibulum at eros",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "in-person",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        }
+    ],
+    "Virtual": [
+        {
+            "precio": 8,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "online",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        },
+        {
+            "precio": 20,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "online",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        },
+        {
+            "precio": 40,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros",
+                "Vestibulum at eros",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "online",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        }
+    ],
+    "Autónomo": [
+        {
+            "precio": 8,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "self",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        },
+        {
+            "precio": 20,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "self",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        },
+        {
+            "precio": 40,
+            "meses": 1,
+            "beneficios": [
+                "Cras justo odio",
+                "Dapibus ac facilisis in",
+                "Vestibulum at eros",
+                "Vestibulum at eros",
+                "Vestibulum at eros"
+            ],
+            "css-clase": "self",
+            "link": "https://checkout.stripe.com/c/pay/cs_test_a1fMqJ2YGIgivjwkXTEC05KNPVMOIaK3tfVd7kGWsxfIlz4EvCJ5TFw4Nb#fidkdWxOYHwnPyd1blpxYHZxWjA0S0o2fzRGNEl2NFExNEpqbEhMX2did119VjVyS0pnM2R3f3BsQ0BnNjNOQ0Bpam1%2FMUxpXX1scUk2QmN%2FUTZiaExdSjJ1NVxPdlBSYkJ3Y0JGVnN%2FNjN8NTVnQUZXXD1HZicpJ3VpbGtuQH11anZgYUxhJz8ncWB2cVo1NWI8QDA8VGg8VHw2T3A8REQneCUl"
+        }
+    ]
+}

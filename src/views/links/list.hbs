@@ -1,0 +1,256 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col">
+            
+            <!--
+            <p class="text-center">Solicitudes de Folio</p>
+            <table class="table table-striped mt-4" style="table-layout: fixed; width: 100%;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" class="col-sm-1">num_revision</th>
+                        <th scope="col" class="col-sm-1">area</th>
+                        <th scope="col" class="col-sm-2">motivo</th>
+                        <th scope="col" class="col-sm-1">estado</th>
+                        <th scope="col" class="col-sm-1">fecha</th>
+                        <th scope="col" class="col-sm-1">Respuesta</th>
+                    </tr>
+                </thead>
+                
+                {{#if (xor_ (if_ type_acces 'all') (if_ type_acces 'folio'))}}
+                    {{#each revision}}
+
+                        {{#if (if_ estado 'revision')}}
+                        <tbody>
+                            <tr>
+                                <th>{{num_revision}}</th>
+                                <td>{{area}}</td>
+                                <td style="word-wrap: break-word;"><div>{{motivo}}</div></td>
+                                <td>{{estado}}</td>
+                                <td>{{date_ fecha}}</td>
+                                <td>{{respuesta}}
+                                    
+                                    <div class="row">
+                                        <form action="/links/acept_folio" method="POST">
+                                            <button type="submit" formmethod="POST" class="btn btn-outline-success btn-sm" value="{{num_revision}}" name="aceptar">Aceptar</button>
+                                        </form>
+                                    </div>
+                                   
+                                    {{#if (if_ area ../user.area)}}
+                                        <div class="row">
+                                            <form>
+                                                <a href="/links/edit_motivo/{{num_revision}}" class="btn btn-outline-secondary mt-4 btn-sm">Cambiar motivo</a>
+                                            </form>
+                                        </div>
+                                    {{else}}
+                                        <div class="row">
+                                            <form>
+                                                <a href="/links/edit_folio/{{num_revision}}" class="btn btn-outline-secondary mt-4 btn-sm">Observación</a>
+                                            </form>
+                                        </div>
+                                    {{/if}}
+                                    
+                                    <!--<div class="row">
+                                        <form>
+                                            <a href="/links/reject_folio/{{num_revision}}" class="btn btn-outline-danger mt-4 btn-sm">Rechazar</a>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {{/if}}
+                    {{/each}}
+                {{else}}
+                    
+                    {{#each revision}}
+                        <tbody>
+                            <tr>
+                                <th>{{num_revision}}</th>
+                                <td>{{area}}</td>
+                                <td style="word-wrap: break-word;"><div>{{motivo}}</div></td>
+                                <td>{{estado}}</td>
+                                <td>{{date_ fecha}}</td>
+                                <td>
+                                    {{respuesta}}
+                                    {{#if (not_ estado 'acepado')}}
+                                        <div class="row">
+                                            <form>
+                                                <a href="/links/edit_motivo/{{num_revision}}" class="btn btn-outline-secondary mt-4 btn-sm">Cambiar motivo</a>
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <form action="/links/cancel" method="POST">
+                                                <button type="submit" formmethod="POST" class="btn btn-outline-danger mt-4 btn-sm" value="{{num_revision}}" name="cancelar">Cancelar</button>
+                                            </form>
+                                        </div>
+                                    {{/if}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    {{/each}}
+                    
+                {{/if}}
+            </table>-->
+
+            
+            <br>
+            <hr>
+            <p class="text-center">Solicitudes de Oficio</p>
+            <table class="table table-striped mt-4" style="table-layout: fixed; width: 100%;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" class="col-sm-1">num_revision</th>
+                        <th scope="col" class="col-sm-1">area</th>
+                        <th scope="col" class="col-sm-2">motivo</th>
+                        <th scope="col" class="col-sm-1">estado</th>
+                        <th scope="col" class="col-sm-1">fecha</th>
+                        <th scope="col" class="col-sm-1">Respuesta</th>
+                    </tr>
+                </thead>
+                
+                
+                {{#if (xor_ (if_ type_acces 'all') (if_ type_acces 'oficio'))}}
+                    {{#each revision_oficio}}
+                        {{#if (if_ estado 'revision')}}
+                        <tbody>
+                            <tr>
+                                <th>{{num_revision}}</th>
+                                <td>{{area}}</td>
+                                <td style="word-wrap: break-word;"><div>{{motivo}}</div></td>
+                                <td>{{estado}}</td>
+                                <td>{{date_ fecha}}</td>
+                                <td>{{respuesta}}
+                                    <div class="row">
+                                        <form action="/links/acept_oficio" method="POST">
+                                            <button type="submit" formmethod="POST" class="btn btn-outline-success btn-sm" value="{{num_revision}}" name="aceptar">Aceptar</button>
+                                        </form>
+                                    </div>
+                                    {{#if (if_ area ../user.area)}}
+                                        <div class="row">
+                                            <form>
+                                                <a href="/links/edit_motivo_oficio/{{num_revision}}" class="btn btn-outline-secondary mt-4 btn-sm">Cambiar motivo</a>
+                                            </form>
+                                        </div>
+                                    {{else}}
+                                        <div class="row">
+                                            <form>
+                                                <a href="/links/edit_oficio/{{num_revision}}" class="btn btn-outline-secondary mt-4 btn-sm">Observación</a>
+                                            </form>
+                                        </div>
+                                    {{/if}}
+                                </td>
+                            </tr>
+                        </tbody>
+                        {{/if}}
+                    {{/each}}
+                {{else}}
+                    {{#each revision_oficio}}
+                        <tbody>
+                            <tr>
+                                <th>{{num_revision}}</th>
+                                <td>{{area}}</td>
+                                <td style="word-wrap: break-word;"><div>{{motivo}}</div></td>
+                                <td>{{estado}}</td>
+                                <td>{{date_ fecha}}</td>
+                                <td>
+                                    {{respuesta}}
+                                    {{#if (not_ estado 'acepado')}}
+                                        <div class="row">
+                                            <form>
+                                                <a href="/links/edit_motivo_oficio/{{num_revision}}" class="btn btn-outline-secondary mt-4 btn-sm">Cambiar motivo</a>
+                                            </form>
+                                        </div>
+                                        <div class="row">
+                                            <form action="/links/cancel_oficio" method="POST">
+                                                <button type="submit" formmethod="POST" class="btn btn-outline-danger mt-4 btn-sm" value="{{num_revision}}" name="cancelar">Cancelar</button>
+                                            </form>
+                                        </div>
+                                    {{/if}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    {{/each}}
+                {{/if}}
+            </table>
+            <br>
+
+            <br>
+            <hr>
+            <p class="text-center">Solicitudes Aceptadas</p>
+            <br>
+
+            <div class="row">
+                <div class="col-8">
+                    {{> filters}}
+                </div>
+                
+            </div>
+
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Folios</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Oficios</button>
+                </li>
+                
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-striped mt-4">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">num_folio</th>
+                                        <th scope="col">area</th>
+                                        <th scope="col">motivo</th>
+                                        <th scope="col">fecha</th>
+                                    </tr>
+                                </thead>
+                                
+                                {{#each folios}}
+                                    <tbody>
+                                        <th scope="row">{{num_folio}}</th>
+                                        <td>{{area}}</td>
+                                        <td>{{motivo}}</td>
+                                        <td>{{date_ fecha}}</td>
+                                    </tbody>
+                                {{/each}}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-striped mt-4">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">num_folio</th>
+                                        <th scope="col">area</th>
+                                        <th scope="col">motivo</th>
+                                        <th scope="col">fecha</th>
+                                    </tr>
+                                </thead>
+                                
+                                {{#each oficios}}
+                                    <tbody>
+                                        <th scope="row">{{num_oficio}}</th>
+                                        <td>{{area}}</td>
+                                        <td>{{motivo}}</td>
+                                        <td>{{date_ fecha}}</td>
+                                    </tbody>
+                                {{/each}}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+</div>

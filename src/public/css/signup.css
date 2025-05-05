@@ -1,0 +1,11 @@
+div.card.signup div.form-group {
+    text-align: left !important;
+}
+
+div.card.signup div.form-check {
+    text-align: left !important;
+}
+
+#captcha-error {
+    text-align: left !important;
+}

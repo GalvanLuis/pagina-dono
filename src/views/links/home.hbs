@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="collapse d-flex flex-column flex-shrink-0 p-0 bg-light lsidebar">
+        <ul class="nav nav-tabs flex-column mb-auto" id="tabList" role="tablist">
+            {{#each routes}}
+            <li class="nav-item">
+                    <a class="nav-link lsidebar-item {{active}}" id="{{@key}}-tab" data-toggle="tab" role="tab" href="#{{@key}}" aria-controls="{{@key}}" aria-selected="false" >
+                        <i class="{{this.icon}}"></i>
+                        <div class="ms-3 lsidebar-tab text-truncate">{{@key}}</div>
+                    </a>                    
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col">
+        <div class="tab-content" id="myTabContent">
+            {{#each routes}}
+                <div class="tab-pane fade show {{active}}" id="{{@key}}" role="tabpanel" aria-labelledby="{{@key}}-tab">
+                  {{{html}}}
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<script src="/js/left_sidebar.js" type="text/javascript"></script>
