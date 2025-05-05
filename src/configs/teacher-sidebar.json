@@ -1,0 +1,15 @@
+{
+    "Inicio": {
+        "icon": "bi bi-house-door-fill",
+        "link": "/teacher/dashboard"
+    },
+
+    "Salones": {
+        "icon": "bi bi-people-fill",
+        "link": "/teacher/classroom"
+    },
+    "Reportes": {
+        "icon": "bi bi-flag-fill",
+        "link": "/teacher/reports"
+    }
+}

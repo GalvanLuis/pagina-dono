@@ -1,0 +1,23 @@
+{
+    "Inicio": {
+        "icon": "bi bi-house-door-fill",
+        "ruta": "/home",
+        "ext": "inicio",
+        "js": ["home.js"],
+        "hbs": "inicio.hbs",
+        "css": [],
+        "json": [],
+        "require_subscription": true,
+        "active": "active"
+    },
+    "Planes": {
+        "icon": "bi bi-currency-dollar",
+        "ruta": "plans",
+        "ext": "planes",
+        "js": [],
+        "hbs": "plans.hbs",
+        "css": [],
+        "json": ["plans.json"],
+        "require_subscription": false
+    }
+}

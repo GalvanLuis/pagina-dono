@@ -1,0 +1,77 @@
+<div class="row w-100">
+    {{> sidebar_admin}}
+    
+    <div class="col p-0 pe-0" style="height:80vh;">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                {{#each usersData as |outerValue outerKey|}}
+                    {{#if @first}}
+                        <button class="nav-link active" id="nav-{{@key}}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{@key}}" type="button" role="tab" aria-controls="nav-{{@key}}" aria-selected="true">{{@key}}</button>
+                    {{else}}
+                        <button class="nav-link" id="nav-{{@key}}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{@key}}" type="button" role="tab" aria-controls="nav-{{@key}}" aria-selected="true">{{@key}}</button>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </nav>
+        
+        <div class="tab-content" id="nav-tabContent" >
+            {{#each usersData as |outerValue outerKey|}}
+            
+                {{#if @first}}
+                    <div class="tab-pane fade show active" id="nav-{{@key}}" role="tabpanel" aria-labelledby="nav-{{@key}}-tab">
+                {{else}}
+                    <div class="tab-pane fade" id="nav-{{@key}}" role="tabpanel" aria-labelledby="nav-{{@key}}-tab">
+                {{/if}}
+                    <div class="container-fluid ps-0 pt-0">
+                        <div class="ms-0 pe-5 ps-5" style="background-color: white;">
+                            <div class="row">
+                                <div class="container-header pt-4 pb-4">
+                                    <div class="row">
+                                        <p class="h1 pe-3">{{@key}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{#if this}}
+                                <div class="container-fluid pt-4 pb-4">
+                                    <div class="table-responsive">
+                                        <table id="table"
+                                            data-toggle="table"
+                                            data-search="true"
+                                            data-sortable="true">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="id" data-sortable="true"> ID del pago</th>
+                                                    <th data-field="id_student" data-sortable="true"> ID del usuario</th>
+                                                    <th data-field="student_name" data-sortable="true"> Nombre del usuario</th>
+                                                    <th data-field="Classroom" data-sortable="true"> Aula</th>
+                                                    <th data-field="payment_date" data-sortable="true"> Fecha de pago</th>
+                                                    <th data-field="payment_amount" data-sortable="true"> Monto del pago</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each outerValue}}
+                                                    <tr>
+                                                        <td>{{this.id_payment}}</td>
+                                                        <td>{{this.id_student}}</td>
+                                                        <td>{{this.student_Name}}</td>
+                                                        <td>{{this.id_classroom}}</td>
+                                                        <td>{{this.payment_Date}}</td>
+                                                        <td>{{this.payment}}</td>
+                                                    </tr>
+                                                {{/each}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            {{else}}
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<script src="/js/left_sidebar.js" type="text/javascript"></script>
+<script src="/js/admin_payments.js" type="text/javascript"></script>

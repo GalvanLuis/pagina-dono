@@ -1,0 +1,12 @@
+div.card.signin div.form-group {
+    text-align: left !important;
+}
+
+div.card.signin div.form-check {
+    text-align: left !important;
+}
+
+.card.signin {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }

@@ -1,0 +1,50 @@
+<div class="container-fluid content-row p-4">
+    <div class="row">
+        {{#if (if_ user.id_tipo_usuario '5')}}
+            {{#each usuarios}}
+                <div class="col-sm-6 col-lg-4 pt-4">
+                    <div class="card h-100 text-center" style="border:1px black solid">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title text-uppercase">{{area}}</h3>
+                            <p style="margin-bottom: 0px;">ID Usuario: <strong>{{id}}</strong></p>
+                            <p>{{timeago fecha_creado}}</p>
+                            <div class="row d-md-flex justify-content-md-center" style="margin-top: auto;">
+                                <div class="col text-center">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#U{{id}}">
+                                        Borrar
+                                    </button>
+                                    <a href="/links/edit/{{id}}" class="btn btn-secondary">Editar</a>
+                                </div>
+                            </div>
+                            
+                            <div class="modal fade" id="U{{id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">¿Está seguro que quiere borrar al Usuario {{id}} del area "{{area}}"?</h5>
+                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <a href="/links/delete/{{id}}" class="btn btn-danger">Borrar</a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{else}}
+                <div class="col-md-4 mx-auto">
+                    <div class="card card-body text-center">
+                        <p>No hay ningun Usuario registrado</p>
+                        <a href="/links/add">¿Quiere agregar uno?</a>
+                    </div>
+                </div>
+            {{/each}}
+        {{/if}}
+    </div>
+</div>
+
+
+

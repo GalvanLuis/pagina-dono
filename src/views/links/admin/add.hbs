@@ -1,0 +1,111 @@
+<div class="row w-100">
+    {{> sidebar_admin}}
+
+    <div class="col p-0 pe-5" style="max-height: 100rem !important;">
+        <div class="container-fluid ps-0 pt-0">
+            <div class="ms-0 pe-5 ps-5" style="background-color: white;">
+                <div class="row">
+                    <div class="container-header pt-4 pb-4">
+                        <div class="row">
+                            <p class="h1 pe-3">Seleccione quien va a ser el nuevo {{id_to_name userType}}</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center h-100 me-auto pe-0"
+                                style="background-color: #e7e7e7;margin-left: 0.7rem !important;">
+                                <i class="bi bi-search pe-1"></i>
+                                <input class="form-control" type="text" id="searchInput-all" oninput="searchUser('all')"
+                                    placeholder="Buscar Usuario"
+                                    style="background-color: #e7e7e7; border-radius: 0; border-width: 0;">
+                            </div>
+
+                            <div class="col-2">
+                                <a href="{{up_dir actualPage}}" class="btn btn-secondary w-100">
+                                    <i class="bi bi-arrow-90deg-left pe-2"></i>
+                                    Volver
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{#each usersData as |outerValue outerKey|}}
+                <div class="row" id="all">
+                    {{#each outerValue}}
+                    <div class="col-lg-3 col-md-12 mb-4 user-container">
+                        <a type="button" class="w-100" data-bs-toggle="modal" data-bs-target="#confirmAdd"
+                            data-bs-id="{{this.id_usuario}}" data-bs-name="{{this.nombre}} {{this.apellido}}"
+                            data-bs-usertype="{{userType}}" style="text-decoration: none; color: inherit">
+                            <div class="card h-100 w-100 shadow-lg">
+                                <div class="card-header"
+                                    style="background-color: rgb(237, 237, 237); border-bottom: 0 !important">
+                                    <div class="text-center">
+                                        <img src="/img/guillermo.jpg" alt="" width="120" height="120"
+                                            class="rounded-circle border border-dark" />
+                                    </div>
+                                    <div class="text-center pt-3">
+                                        <span class="h2">{{this.nombre}} {{this.apellido}}</span>
+                                        <p style="color: #4e84e0;">{{this.correo_electronico}}</p>
+                                        <span class="h5">{{outerKey}}</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex card-footer text-center pb-3 w-100 h-100 align-items-end"
+                                    style="background-color: rgb(237, 237, 237); border-top: 0 !important">
+                                    <p class="h5 mx-auto">Se unió el {{date_ this.fecha_creado}}</p>
+                                </div>
+                            </div>
+                        </a>
+                        {{!-- <a href="{{../../actualPage}}/edit?id={{this.id_usuario}}"
+                            style="text-decoration: none; color: inherit">
+                            <div class="card h-100 w-100 shadow-lg">
+                                <div class="card-header"
+                                    style="background-color: rgb(237, 237, 237); border-bottom: 0 !important">
+                                    <div class="text-center">
+                                        <img src="/img/guillermo.jpg" alt="" width="120" height="120"
+                                            class="rounded-circle border border-dark" />
+                                    </div>
+                                    <div class="text-center pt-3">
+                                        <span class="h2">{{this.nombre}} {{this.apellido}}</span>
+                                        <p style="color: #4e84e0;">{{this.correo_electronico}}</p>
+                                        <span class="h5">{{outerKey}}</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex card-footer text-center pb-3 w-100 h-100 align-items-end"
+                                    style="background-color: rgb(237, 237, 237); border-top: 0 !important">
+                                    <p class="h5 mx-auto">Se unió el {{date_ this.fecha_creado}}</p>
+                                </div>
+                            </div>
+                        </a> --}}
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmAdd" tabindex="-1" aria-labelledby="confirmAddLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmAddLabel">Confirmar Agregado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro que quiere agregar a <span id="name-user" class="h5"></span> como {{id_to_name userType}}?
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <form action="{{actualPage}}" method="post">
+                    <input type="text" class="form-control" id="id-user" hidden>
+                    <button type="button" class="btn btn-success">Aceptar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/left_sidebar.js" type="text/javascript"></script>
+<script src="/js/admin_searchusers.js" type="text/javascript"></script>
+<script src="/js/admin_add_usertype.js" type="text/javascript"></script>

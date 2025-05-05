@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"/> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>
+      Bienvenido a la Academia Virutal de la Lengua de Señas Mexicana
+    </title>
+
+    <style type="text/css">
+      body {
+        margin: 0;
+        /* background-color: #cccccc; */
+      }
+      table {
+        border-spacing: 0;
+      }
+      td {
+        padding: 0;
+      }
+
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        /* background-color: #cccccc; */
+        padding-bottom: 0;
+      }
+      .main {
+        background-color: white;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+        border-spacing: 0;
+        font-family: "Roboto", sans-serif;
+        color: #171a1b;
+      }
+
+      .email-head {
+        padding-top: 2.5em !important;
+        padding-bottom: 2.5em !important;
+        padding-left: 1.4em;
+      }
+      .email-head b {
+        color: rgb(27, 126, 151);
+      }
+
+      .email-body {
+        padding-left: 1.4em;
+      }
+      .email-body b {
+        padding-bottom: 1.5em !important;
+      }
+      div.button {
+        text-align: center;
+      }
+
+      button {
+        margin: 0 auto;
+        display: block;
+      }
+
+      /* CSS */
+      .button-verf {
+        appearance: button;
+        background-color: rgb(27, 126, 151);
+        border: 1px solid rgb(24, 114, 136);
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+        font-size: 14px;
+        line-height: 1.15;
+        overflow: visible;
+        padding: 12px 16px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transition: all 80ms ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: fit-content;
+      }
+
+      .button-verf:disabled {
+        opacity: .5;
+      }
+
+      .button-verf:focus {
+        outline: 0;
+      }
+
+      .button-verf:hover {
+        background-color: rgb(19, 94, 112);
+        border-color: rgb(19, 94, 112);
+      }
+
+      .button-verf:active {
+        background-color: #0039D7;
+        border-color: #0039D7;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #button {
+        text-decoration: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <table class="main" width="100%">
+        <tr>
+          <td height="40" style="background-color: rgb(27, 126, 151)"></td>
+        </tr>
+        <tr>
+          <td class="email-head">
+            <b style="font-size: 38px">¡Bienvenido!</b>
+          </td>
+        </tr>
+        <tr>
+          <td class="email-body">
+            <b style="font-size: 28px">{{username}}</b>
+            <br />
+
+            <p>
+              Nos complace tenerte como parte de nuestra familia. Con tu
+              registro, ahora tienes acceso a todas las funciones y beneficios
+              que ofrecemos. Esperamos que disfrutes de la experiencia de ser
+              parte de nuestra comunidad y que encuentres todo lo que buscas.
+            </p>
+            <p>
+              En nuestra plataforma, puedes interactuar con otros miembros,
+              compartir ideas, aprender nuevas habilidades y hacer crecer tu
+              red. Además, puedes participar en eventos, recibir noticias y
+              actualizaciones exclusivas, y mucho más.
+            </p>
+            <p>
+              No dudes en contactarnos si necesitas ayuda o tienes alguna
+              pregunta. Estamos aquí para ayudarte en todo lo que necesites y
+              garantizar que tengas una experiencia satisfactoria con nosotros.
+            </p>
+            <p>
+              Para terminar tu registro es necesario verificar tu correo:
+            </p>
+            <p>
+              <div class="button">
+                <a href="http://localhost:4000/verify/{{info}}" class="button-verf" id="button" target="_blank">Verificar Correo</a>
+              </div>
+            </p>
+            <p>
+              ¡Gracias por unirte a nosotros y esperamos verte pronto en nuestra
+              plataforma!
+            </p>
+          </td>
+        </tr>
+        <tr>
+            <td height="40" style="background-color: rgb(27, 126, 151)"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

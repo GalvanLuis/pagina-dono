@@ -1,0 +1,91 @@
+<div class="row w-100">
+    <div class="col-auto p-0 bg-light lsidebar">
+        <ul class="nav nav-tabs flex-column mb-auto">
+            {{#each adminSidebar}}
+            <li class="nav-item">
+                <a href={{this.link}} class="nav-link lsidebar-item {{this.active}}" aria-current="page">
+                    <i class="{{this.icon}}"></i>
+                    <div class="ms-3 lsidebar-tab text-truncate">{{@key}}</div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="col-auto mx-auto">
+        <div class="container p-4">
+            <div class="card text-center signup">
+                <div class="card-header">
+                    Favor de rellenar todos los campos
+                </div>
+                <div class="card-body">
+                    <form action="/admin-plans/add-plan" method="POST" id="singup-form" class="needs-validation"
+                        novalidate>
+                        <div class="row">
+                            <div class="col-6 pe-0">
+                                <div class="form-group p-2">
+                                    <label class="form-label" for="nameValidation">
+                                        <b>Precio (mxn)</b>
+                                        <span style="color: red;">*</span>
+                                    </label>
+                                    <input type="text" name="price" id="priceValidation" placeholder="Precio"
+                                        pattern="\d+(\.\d+)?" class="form-control" autofocus required>
+                                    <div class="invalid-feedback">
+                                        Favor de escribir un precio valido
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 ps-0">
+                                <div class="form-group p-2">
+                                    <label class="form-label">
+                                        <b>Duración</b>
+                                        <span style="color: red;">*</span>
+                                    </label>
+                                    <select type="text" name="duration" class="form-select" required>
+                                        <option value="1">1 mes</option>
+                                        <option value="2">2 meses</option>
+                                        <option value="3">3 meses</option>
+                                        <option value="4">4 meses</option>
+                                        <option value="5">5 meses</option>
+                                        <option value="6">6 meses</option>
+                                        <option value="7">7 meses</option>
+                                        <option value="8">8 meses</option>
+                                        <option value="9">9 meses</option>
+                                        <option value="10">10 meses</option>
+                                        <option value="11">11 meses</option>
+                                        <option value="12">12 meses</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        No puede ir vacio este campo
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group p-2">
+                                    <label class="form-label"><b>Descripción</b> <span
+                                            style="color: red;">*</span></label>
+                                    <textarea name="description" cols="8" rows="3" class="form-control"
+                                        required></textarea>
+                                    <div class="invalid-feedback">
+                                        No puede ir vacio este campo
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group p-2">
+                            <input type="hidden" name="type_plan" value="{{id_plan}}">
+                            <div class="d-grid">
+                                <button class="btn btn-success" type="submit">Agregar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/left_sidebar.js" type="text/javascript"></script>
+<script src="/js/admin_add_user.js" type="text/javascript"></script>

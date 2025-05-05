@@ -1,0 +1,139 @@
+{{!-- 
+
+This template renders the admin reports page with a sidebar and tabbed navigation for different user data categories. 
+
+Structure:
+- A row containing the sidebar and the main content area.
+- A navigation bar with tabs for each user data category.
+- Tab content for each user data category, displaying reports in cards.
+- Each card can trigger a modal with detailed report information.
+
+Components:
+- Sidebar: Included via partial `sidebar_admin`.
+- Navigation Tabs: Dynamically generated from `usersData`.
+- Tab Content: Dynamically generated from `usersData`.
+- Report Cards: Display individual reports with student name, report date, and truncated report text.
+- Modal: Displays detailed report information when a card is clicked.
+
+Styles and Scripts:
+- Custom styles are linked from `/css/admin_reports.css`.
+- Custom scripts are linked from `/js/left_sidebar.js` and `/js/admin_reports.js`.
+
+Dependencies:
+- Bootstrap for styling and modal functionality.
+- Handlebars for templating and dynamic content generation.
+
+Usage:
+- Ensure `usersData` is provided in the context with the necessary structure.
+- Include required CSS and JS files in the project.
+--}} 
+<div class="row w-100">
+    {{> sidebar_admin}}
+
+    <div class="col p-0 pe-0" style="height:80vh;">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                {{#each usersData as |outerValue outerKey|}}
+                    {{#if @first}}
+                        <button class="nav-link active" id="nav-{{@key}}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{@key}}" type="button" role="tab" aria-controls="nav-{{@key}}" aria-selected="true">{{@key}}</button>
+                    {{else}}
+                        <button class="nav-link" id="nav-{{@key}}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{@key}}" type="button" role="tab" aria-controls="nav-{{@key}}" aria-selected="true">{{@key}}</button>
+                    {{/if}}
+                {{/each}}
+            </div>
+        </nav>
+        
+        <div class="tab-content" id="nav-tabContent" >
+            {{#each usersData as |outerValue outerKey|}}
+                {{#if @first}}
+                    <div class="tab-pane fade show active" id="nav-{{@key}}" role="tabpanel" aria-labelledby="nav-{{@key}}-tab">
+                {{else}}
+                    <div class="tab-pane fade" id="nav-{{@key}}" role="tabpanel" aria-labelledby="nav-{{@key}}-tab">
+                {{/if}}
+                
+                <div class="container-fluid ps-0 pt-0">
+                    <div class="ms-0 pe-5 ps-5" style="background-color: white;">
+                        <div class="row">
+                            <div class="container-header pt-4 pb-4">
+                                <div class="row">
+                                    <p class="h1 pe-3"> Reportes de alumnos del plan {{@key}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <link rel="stylesheet" href="/css/admin_reports.css">
+                        {{#if this}}
+                            <div class="row" id="{{outerKey}}">
+                                {{#each outerValue}}
+                                    <div class="card h-200 w-100 shadow-lg mb-4" data-bs-toggle="modal" data-bs-target="#ReportCard-{{outerKey}}-{{@index}}">
+                                        <div class="card-body">
+                                            <p class="card-title d-flex justify-content-between">
+                                                <span>{{this.student_Name}}</span>
+                                                <span style="font-size: 0.8em;">
+                                                    Folio: <span style="color: red;">{{this.id_report}}</span>
+                                                    <br>
+                                                    {{this.report_Date}}
+                                                </span>
+                                            </p>
+                                            <img src="/img/guillermo.jpg" width="64" height="64" class="squirqle border report-image"
+                                            <p class="card-text text-justify">{{truncate this.report 100}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="ReportCard-{{outerKey}}-{{@index}}" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Información del reporte</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body d-flex justify-content-between">
+                                                    <span><strong>Nombre del alumno:</strong> {{this.student_Name}}</span>
+                                                    <p><strong>Folio del reporte:</strong> {{this.id_report}}</p>
+                                                </div>
+                                                <div class="modal-body">    
+                                                    <p><strong>Fecha del reporte:</strong> {{this.report_Date}}</p>
+                                                    <p><strong>Numero de cuenta:</strong> {{this.student_id}}</p>
+                                                    <p><strong>Salon: </strong>{{this.id_classroom}}</p>
+                                                    <p><strong>Correo: </strong>{{this.student_email}}</p>
+                                                    <p><strong>Profesor reportado: </strong>{{this.reported_teacher}}</p>
+                                                    <div class="reporte">
+                                                        <p><strong>Reporte: </strong> {{this.report}}</p>
+                                                    </div>
+                                                    <a href="{{this.student_attachment}}" target="_blank">Ver adjunto</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        {{else}}
+                            <div class="row">
+                                <div class="container pb-4">
+                                    <div class="row">
+                                        <div class="col-12 col-md-7 col-lg-5 col-xl-4 mx-auto">
+                                            <div class="card text-center">
+                                                <div class="card-header" style="background-color: gray;">
+                                                    <i class="bi bi-person-square" style="color: white; font-size: 5rem;"></i>
+                                                    <p style="color:white; font-size: 1.3rem;">Lista de reportes vacia</p>
+                                                </div>
+                                                <div class="card-body pt-2">
+                                                    <p style="font-family: 'Raleway', sans-serif;">
+                                                        No hay ningun reporte emitido {{@key}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>                
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<script src="/js/left_sidebar.js" type="text/javascript"></script>
+<script src="/js/admin_reports.js" type="text/javascript"></script>

@@ -1,0 +1,172 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text" style="font-size: 20px;">
+                        <strong style="font-size: 25px;">Area:</strong>
+                        {{area}}
+                    </p>
+
+                    <p class="card-text" style="font-size: 20px;">
+                        <strong style="font-size: 25px;">Fecha de la solicitud:</strong>
+                        {{date_ fecha_solicitado}}
+                    </p>
+
+                    <p class="card-text" style="font-size: 20px;">
+                        <strong style="font-size: 25px;">Motivo:</strong>
+                        {{motivo}}
+                    </p>
+                    
+                    {{#if (IF user.id id_usuario)}}
+                    <p class="card-text" style="font-size: 20px;">
+                        {{#unless (IF id_estatus "4")}}
+                            {{#unless (IF id_estatus "1")}}
+                                {{#unless (IF id_estatus "3")}}
+                                    <strong style="font-size: 25px;">Observación:</strong>
+                                {{/unless}}
+                            {{/unless}}
+                        {{else}}
+                            <strong style="font-size: 25px;">Motivo por el que se rechazó el oficio:</strong>
+                        {{/unless}}
+                        
+                        {{#unless (IF id_estatus "1")}}
+                            {{#unless (IF id_estatus "3")}}
+                                {{observacion}}
+                            {{/unless}}
+                        {{/unless}}
+                        
+                    </p>
+                    {{/if}}
+
+                    
+                    {{#unless (OR (IF id_estatus "4") (IF id_estatus "1"))}}
+
+                    <div class="container p-0 m-0">
+                        <ul class="nav nav-tabs row" id="" role="tablist">
+                            {{#if (IF id_estatus "2")}}
+                            <li class="nav-item col-12 col-sm-4 col-md-auto solc" role="presentation">
+                                <button class="nav-link active mx-auto bsolc" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Hacer observacion</button>
+                            </li>
+
+                            <li class="nav-item col-12 col-sm-4 col-md-auto solc" role="presentation">
+                                <button class="nav-link mx-auto bsolc" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Rechazar Oficio</button>
+                            </li>
+
+                            <li class="nav-item col-12 col-sm-4 col-md-auto solc" role="presentation">
+                                <button class="nav-link mx-auto bsolc" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile3" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Aceptar Oficio</button>
+                            </li>
+                            {{/if}}
+
+                            {{#if (IF user.id id_usuario)}}
+                            {{#unless (IF id_estatus "3")}}
+                            <li class="nav-item col-12 col-sm-4 col-md-auto solc" role="presentation">
+                                <button class="nav-link mx-auto bsolc" id="pills-profile-tab2" data-toggle="pill" data-target="#pills-profile2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Editar Oficio</button>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+                        </ul>
+                    
+                        {{#if (IF id_estatus "2")}}
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home">
+                                <div class="row">
+                                    <div class="col">
+                                        
+                                        <form action="/links/observacion_oficio/{{num_oficio}}" method="POST">
+                                            <div class="form-group pt-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label"><h5>Observaciones de la Solicitud</h5></label>
+                                                <textarea class="form-control" type="password" name="observacion" rows="5"></textarea>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <input class="btn btn-primary" type="submit" value="Enviar observaciones">
+                                                </div>
+                                            </div>
+                                        </form>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile">
+                                <div class="row">
+                                    <div class="col">
+                                        
+                                        <form action="/links/rechazar_oficio/{{num_oficio}}" method="POST">
+                                            <div class="form-group pt-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label"><h5>Motivo por el cual se rechaza la solicitud</h5></label>
+                                                <textarea class="form-control" type="password" name="observacion" rows="5"></textarea>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <input class="btn btn-danger" type="submit" value="Rechazar">
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-profile3" role="tabpanel" aria-labelledby="pills-profile">
+                                <div class="row">
+                                    <div class="col">
+                                        
+                                        <form action="/links/aceptar_oficio/{{num_oficio}}" method="POST">
+                                            <div class="form-group pt-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label">
+                                                    <h5>Se acepta el oficio</h5>
+                                                </label>
+                                                
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <input class="btn btn-success" type="submit" value="Aceptar">
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        {{/if}}
+
+                        {{#if (OR (IF id_estatus "2") (IF id_estatus "5"))}}
+                            <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile">
+                                <div class="row">
+                                    <div class="col">
+                                        
+                                        <form action="/links/editar_oficio/{{num_oficio}}" method="POST">
+                                            <div class="form-group pt-3">
+                                                <label for="exampleFormControlTextarea1" class="form-label"><h5>Edite el motivo del oficio:</h5></label>
+                                                <textarea class="form-control" type="password" name="motivo" rows="5">{{motivo}}</textarea>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <input class="btn btn-primary" type="submit" value="Editar">
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        {{/if}}    
+                        </div>
+
+
+                        
+
+                    </div>
+                    {{/unless}}
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

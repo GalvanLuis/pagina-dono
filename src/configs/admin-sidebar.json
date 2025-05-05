@@ -1,0 +1,32 @@
+{
+    "Inicio": {
+        "icon": "bi bi-house-door-fill",
+        "link": "/admin/dashboard"
+    },
+
+    "Usuarios": {
+        "icon": "bi bi-person-fill",
+        "link": "/admin/users"
+    },
+
+    "Planes": {
+        "icon": "bi bi-currency-dollar",
+        "link": "/admin/plans"
+    },
+    "Salones": {
+        "icon": "bi bi-journal-richtext",
+        "link": "/admin/classrooms"
+    },
+    "Pagos": {
+        "icon": "bi bi-cash-stack",
+        "link": "/admin/payments"
+    },
+    "Reportes": {
+        "icon": "bi bi-flag-fill",
+        "link": "/admin/reports"
+    },
+    "Calendario": {
+        "icon": "bi bi-calendar2-week",
+        "link": "/admin/activities"
+    }
+}

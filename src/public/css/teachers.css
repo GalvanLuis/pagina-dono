@@ -1,0 +1,8 @@
+.teacher-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

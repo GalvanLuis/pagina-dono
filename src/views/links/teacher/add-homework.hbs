@@ -1,0 +1,94 @@
+<div class="row w-100">
+    {{> sidebar_teacher}}
+
+    <div class="col-12 col-md-6 mx-auto">
+        <div class="container container-fluid ps-0 pt-4">
+            <div class="card">
+                <div class="card-body p-4 p-md-5" style="border-bottom: 0 !important">
+                    <form action="add-homework" method="POST" id="add-homework-form" class="was-validated">
+
+                        <div class="row">
+                            <div class="h4 pb-3 ps-0">
+                                Agregar una nueva tarea
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 pe-0">
+                                <div class="form-group p-2">
+                                    <label class="form-label" for="due-date">
+                                        <b>Fecha de entrega</b>
+                                        <span style="color: red;">*</span>
+                                    </label>
+                                    <input type="date" name="dueDate" id="due-date" class="form-control" required>
+                                    <div class="invalid-feedback">
+                                        No puede ir vacio este campo
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 ps-0">
+                                <div class="form-group p-2">
+                                    <label class="form-label" for="additional-materials">
+                                        <b>Enlaces a materiales adicionales</b>
+                                    </label>
+                                    <input type="url" name="additionalMaterials" id="additional-materials" class="form-control"
+                                        placeholder="Ingrese los enlaces (opcional)">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group p-2">
+                                    <label class="form-label" for="homework-description">
+                                        <b>Descripción de la tarea</b>
+                                        <span style="color: red;">*</span>
+                                    </label>
+                                    <textarea name="description" id="homework-description" class="form-control"
+                                        placeholder="Ingrese la descripción de la tarea (obligatorio)" rows="4" required></textarea>
+                                    <div class="invalid-feedback">
+                                        No puede ir vacio este campo
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-auto me-auto">
+                                <button type="button" class="btn btn-danger" onclick="window.history.back();">
+                                    Cancelar
+                                </button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary">
+                                    Agregar tarea
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmCancel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Cancelación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas cancelar la creación de esta tarea?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Sí</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/admin_add_plan.js" type="text/javascript"></script>
+

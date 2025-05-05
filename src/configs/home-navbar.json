@@ -1,0 +1,15 @@
+{
+    "homepage":true,
+    "logo": {
+        "src": "/img/SAS_logo.jpg",
+        "link": "/homepage",
+        "space": "pe-1 ps-5"
+    },
+    "nav_items": {
+        "Inicio": {"link": "#", "icon": "bi bi-house-fill", "space": "ps-5"},
+        "Planes": {"link": "/plans", "icon": "bi bi-currency-dollar"},
+        "Contacto": {"link": "#", "icon": "bi bi-phone"}
+    },
+    "sign in": "/sign_in",
+    "sign out": "/sign_out"
+}
