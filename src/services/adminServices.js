@@ -6,6 +6,7 @@ const { DOMAIN, ADMIN_SIDEBAR_PATH, LOGGED_NAVBAR_PATH, IDS_USER_TYPE } = requir
 const { render } = require('timeago.js');
 
 
+
 const renderDashboard = () => {
     const adminSidebar = sidebarFunctions.readSidebar(ADMIN_SIDEBAR_PATH, "Inicio");
     const navbar = navbarFunctions.readNavbar(LOGGED_NAVBAR_PATH);
@@ -77,6 +78,12 @@ const renderPayments = () => {
     return { adminSidebar, navbar };
 };
 
+// Calendario de actividades
+const renderSchedule = () => {
+    const adminSidebar = sidebarFunctions.readSidebar(ADMIN_SIDEBAR_PATH, "Calendario de actividades");
+    const navbar = navbarFunctions.readNavbar(LOGGED_NAVBAR_PATH);
+    return { adminSidebar, navbar };
+};
 
 const renderEditUser = async(user_id) => {
     const userDataTask = getOneUser(user_id);
@@ -226,7 +233,7 @@ module.exports = {
     renderAddClassroom,
     renderEditClassroom,
     renderReports,
-    ///renderReportMotive,
+    renderSchedule,
     renderPayments,
     getPlans,
     getAddPlan,

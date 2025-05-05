@@ -6,7 +6,7 @@ const DOMAIN = "http://localhost:4000/"
  * Llaves y contraseñas para el cifrado de informacion
  */
 const STRIPE_PRIVATE_KEY = process.env.STRIPE_PRIVATE_KEY;
-const RECAPTCHA_KEY = process.env.RECAPTCHA_KEY; 
+const RECAPTCHA_KEY = process.env.RECAPTCHA_KEY;
 const EMAIL_KEY = process.env.EMAIL_KEY;
 const EMAIL_IV = process.env.EMAIL_IV;
 const PHONE_KEY = process.env.PHONE_KEY;
@@ -56,7 +56,7 @@ const PLANS_TO_ID = {
     "Autonomo": "3"
 };
 
-const IDS_USER_TYPE = ["1","2","3","4"];
+const IDS_USER_TYPE = ["1", "2", "3", "4"];
 
 /**
  * ID's de los tipos de Suscripciones
@@ -68,7 +68,7 @@ const ID_SUB_AUTONOMO = 3;
 
 /** 
  * Sidebar config
-*/
+ */
 const DEFAULT_SIDEBAR_PARAMS = {
     "item": "string",
     "icon": "string",
@@ -82,13 +82,13 @@ const TEACHER_SIDEBAR_PATH = "./src/configs/teacher-sidebar.json"
 
 /**
  * Navbar config
-*/
+ */
 const LOGGED_NAVBAR_PATH = "./src/configs/logged-navbar.json"
 
 
 module.exports = {
     DOMAIN,
-    STRIPE_PRIVATE_KEY, 
+    STRIPE_PRIVATE_KEY,
     RECAPTCHA_KEY,
     EMAIL_KEY,
     EMAIL_IV,

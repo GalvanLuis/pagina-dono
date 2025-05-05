@@ -168,25 +168,43 @@ const renderReports = (req, res) => {
     const { adminSidebar, navbar } = adminService.renderReports();
     const usersData = {
         Presencial: [{
-            report_Date: "01/01/22",
+            student_id: 1,
+            report_Date: "01/01/22 11:52 AM",
             id_classroom: "Salon 1",
             id_tipo_plan: 1,
             reported_teacher: "Donovan Moche",
             student_Name: "Garuda",
-            student_mail: "yovanny@duck.com",
+            student_email: "yovanny@duck.com",
             report: "El profe no me ha mandado las rutas de estudio nuevas ademas que lo vieron en la calle con una mujer que no era su esposa",
+            student_attachment: "https://www.google.com",
             id_report: 1
-        }, ],
+        },
+        {
+            student_id: 2,
+            report_Date: "01/02/22 11:55 AM" ,
+            id_classroom: "Salon 1",
+            id_tipo_plan: 1,
+            reported_teacher: "Donovan Moche",
+            student_Name: "Tomas",
+            student_email: "asjdfa@gmail.com",
+            report: "El profe es Racista",
+            student_attachment: "https://www.yahoo.com",
+            id_report: 2
+        }
+        ],
         Remoto: [{
-            report_Date: "01/01/22",
+            student_id: 1,
+            report_Date: "01/01/22 11:56 AM",
             id_classroom: "Salon 2",
             id_tipo_plan: 2,
             reported_teacher: "Pablita",
             student_Name: "Garuda",
-            student_mail: "yovanny@duck.com",
+            student_email: "yovanny@duck.com",
             report: "El profe es Moreno",
-            id_report: 2,
-        }, ],
+            student_attachment: "https://www.start.me", 
+            id_report: 3
+        } 
+    ],
         Autonomo: [],
     };
     const actualPage = DOMAIN + "admin/reports";
@@ -202,147 +220,147 @@ const renderPayments = (req, res) => {
     const { adminSidebar, navbar } = adminService.renderPayments();
     const usersData = {
         Presencial: [{
+                id_student: 1,
                 payment_Date: "01/01/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 1,
                 student_Name: "Garuda",
                 payment: 2000,
                 id_payment: 1,
             },
             {
+                id_student: 1,
                 payment_Date: "01/02/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 1,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 2,
             },
             {
+                id_student: 1,
                 payment_Date: "01/03/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 1,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 3,
             },
             {
+                id_student: 1,
                 payment_Date: "01/04/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 1,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 4,
             },
             {
+                id_student: 1,
                 payment_Date: "01/05/23",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 1,
                 student_Name: "Taco",
                 payment: 4000,
                 id_payment: 23,
             },
             {
+                id_student: 1,
                 payment_Date: "01/06/23",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 1,
                 student_Name: "Taco",
                 payment: 4000,
                 id_payment: 24,
             },
         ],
         Remoto: [{
+                id_student: 2,
                 payment_Date: "01/01/22",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 2,
                 student_Name: "Garuda",
                 payment: 2000,
                 id_payment: 1,
             },
             {
+                id_student: 2,
                 payment_Date: "01/02/22",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 2,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 2,
             },
             {
+                id_student: 2,
                 payment_Date: "01/03/22",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 2,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 3,
             },
             {
+                id_student: 2,
                 payment_Date: "01/04/22",
                 id_classroom: "Salon 10",
-                id_tipo_plan: 2,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 4,
             },
             {
+                id_student: 2,
                 payment_Date: "02/05/23",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 2,
                 student_Name: "Taco",
                 payment: 4000,
                 id_payment: 23,
             },
             {
+                id_student: 2,
                 payment_Date: "01/06/23",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 2,
                 student_Name: "Taco",
                 payment: 4000,
                 id_payment: 24,
             },
         ],
         Autonomo: [{
+                id_student: 3,
                 payment_Date: "01/01/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 3,
                 student_Name: "Garuda",
                 payment: 2000,
                 id_payment: 1,
             },
             {
+                id_student: 3,
                 payment_Date: "01/02/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 3,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 2,
             },
             {
+                id_student: 3,
                 payment_Date: "01/03/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 3,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 3,
             },
             {
+                id_student: 3,
                 payment_Date: "01/04/22",
                 id_classroom: "Salon 1",
-                id_tipo_plan: 3,
                 student_Name: "Garuda",
                 payment: 3000,
                 id_payment: 4,
             },
             {
+                id_student: 3,
                 payment_Date: "01/05/23",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 3,
                 student_Name: "Taco",
                 payment: 4000,
                 id_payment: 23,
             },
             {
+                id_student: 3,
                 payment_Date: "01/06/23",
                 id_classroom: "Salon 2",
-                id_tipo_plan: 3,
                 student_Name: "Taco",
                 payment: 4000,
                 id_payment: 24,
@@ -354,7 +372,12 @@ const renderPayments = (req, res) => {
         .render("links/admin/payments", { adminSidebar, navbar, usersData });
 };
 
-////////////////////////////
+// Calendario de actividades
+
+const renderSchedule = (req, res) => {
+    const { adminSidebar, navbar } = adminService.renderSchedule();
+    res .status(200).render("links/admin/activities", { adminSidebar, navbar });
+};
 
 const renderEditUser = async(req, res) => {
     const { adminSidebar, navbar, userData } = await adminService.renderEditUser(
@@ -530,7 +553,7 @@ module.exports = {
     renderEditClassroom,
     renderAddPlan,
     renderReports,
-    //renderReportMotive,
+    renderSchedule,
     renderPayments,
     getDashboard,
     getPlans,

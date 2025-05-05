@@ -1,0 +1,14 @@
+<div class="col-auto p-0 bg-light lsidebar">
+    <ul class="nav nav-tabs flex-column mb-auto">
+        {{#each teacherSidebar}}
+        <li class="nav-item">
+            <a href={{this.link}} class="nav-link lsidebar-item {{this.active}}" aria-current="page">
+                <i class="{{this.icon}}"></i>
+                <div class="ms-3 lsidebar-tab text-truncate">{{@key}}</div>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+<script src="/js/left_sidebar.js" type="text/javascript"></script>

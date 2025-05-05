@@ -73,6 +73,9 @@ helpers.re_write_month = (month) =>{
     }
 };
 
+//Helpers made by Yovanny
+
+
 helpers.up_dir = (actual_directory) => {
     const s = actual_directory.split('/');
     s.pop();
@@ -87,6 +90,19 @@ helpers.IF = (arg1, arg2) =>{
         return false;
     }
 };
+
+//Helpers made by Yovanny
+
+helpers.sverify = (arg1) =>{
+    try{
+        number = parseInt(arg1);
+        return true;
+    }catch{
+        return false;
+    }
+};
+
+
 
 helpers.IFU = (arg1, arg2) =>{
     console.log("USER:",arg1);
@@ -200,6 +216,14 @@ helpers.ADD = (arg1,arg2) =>{
 
 helpers.SUB = (arg1,arg2) =>{
     return parseInt(arg1) - parseInt(arg2)
+};
+
+//Helpers made by Yovanny
+helpers.truncate = (str, len) => {
+    if (str.length > len) {
+        return str.substring(0, len) + '...';
+    }
+    return str;
 };
 
 module.exports = helpers;

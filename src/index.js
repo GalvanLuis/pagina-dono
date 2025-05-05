@@ -7,7 +7,7 @@ const session = require('express-session');
 const mysqlStore = require('express-mysql-session')(session);
 const passport = require('passport');
 
-const {database} = require('./keys');
+const { database } = require('./keys');
 
 const adminRoutes = require('./routes/adminRoutes');
 
@@ -20,7 +20,7 @@ require('./lib/passport');
 
 // settings
 app.set('port', process.env.PORT || 4000);
-app.set('views', path.join(__dirname,'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
@@ -40,14 +40,14 @@ app.use(session({
 }));
 app.use(flash());
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
 
 // global variables
-app.use((req, res, next) =>{
+app.use((req, res, next) => {
     app.locals.succes = req.flash('succes');
     app.locals.message = req.flash('message');
     app.locals.user = req.user;
@@ -73,17 +73,17 @@ app.use('/admin-plans', require('./routes/admin.plans'));
 
 // teachers links
 app.use('/teacher', teacherRoutes);
-app.use('/teacher-dashboard', require('./routes/teacher-dashboard'));
+
 
 // app.use('/logged',require('./routes/logged'));
 app.use(express.static(__dirname + '/public'));
 
 
 // public
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // start server
-app.listen(app.get('port'), ()=> {
+app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'))
 });
