@@ -1,5 +1,5 @@
 <div class="row w-100">
-    {{> sidebar}}
+    {{> sidebar_admin}}
     
     <div class="col p-0 pe-0" style="height:80vh;">
         <nav>
@@ -29,47 +29,38 @@
                                     <div class="row">
                                         <p class="h1 pe-3">{{@key}}</p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col      d-flex align-items-center h-100 me-auto pe-0 " style="background-color: #e7e7e7;margin-left: 0.7rem !important;">
-                                            <i class="bi bi-search pe-1"></i>
-                                            <input class="form-control" type="text" id="searchInput-{{@key}}" oninput="searchUser('{{@key}}')" placeholder="Buscar {{@key}}" style="background-color: #e7e7e7; border-radius: 0; border-width: 0;">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             {{#if this}}
-                                <div class="container-header pt-4 pb-4">
-                                    <div class="row">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-hover">
-                                                <thead>
+                                <div class="container-fluid pt-4 pb-4">
+                                    <div class="table-responsive">
+                                        <table id="table"
+                                            data-toggle="table"
+                                            data-search="true"
+                                            data-sortable="true">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="id" data-sortable="true"> ID del pago</th>
+                                                    <th data-field="id_student" data-sortable="true"> ID del usuario</th>
+                                                    <th data-field="student_name" data-sortable="true"> Nombre del usuario</th>
+                                                    <th data-field="Classroom" data-sortable="true"> Aula</th>
+                                                    <th data-field="payment_date" data-sortable="true"> Fecha de pago</th>
+                                                    <th data-field="payment_amount" data-sortable="true"> Monto del pago</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{#each outerValue}}
                                                     <tr>
-                                                        <th scope="col">ID del pago</th>
-                                                        <th scope="col">Estudiante</th>
-                                                        <th scope="col">Plan</th>
-                                                        <th scope="col">Salon</th>
-                                                        <th scope="col">Fecha de pago</th>
-                                                        <th scope="col">Monto</th>
-                                                        </tr>
-                                                </thead>
-                                                <tbody>
-                                                {{#if outerValue}}
-                                                    <div class="row" id="{{outerKey}}">
-                                                        {{#each outerValue}}
-                                                            <tr data-bs-toggle="modal" data-bs-target="showpaymentifo">
-                                                                <th scope="row">{{this.id_payment}}</th>
-                                                                <td>{{this.student_Name}}</td>
-                                                                <td>{{this.id_tipo_plan}}</td>
-                                                                <td>{{this.id_classroom}}</td>
-                                                                <td>{{this.payment_Date}}</td>
-                                                                <td>{{this.payment}}</td>
-                                                            </tr>
-                                                        {{/each}}
-                                                    </div>
-                                                {{/if}}
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                        <td>{{this.id_payment}}</td>
+                                                        <td>{{this.id_student}}</td>
+                                                        <td>{{this.student_Name}}</td>
+                                                        <td>{{this.id_classroom}}</td>
+                                                        <td>{{this.payment_Date}}</td>
+                                                        <td>{{this.payment}}</td>
+                                                    </tr>
+                                                {{/each}}
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             {{else}}
@@ -83,4 +74,4 @@
 </div>
 
 <script src="/js/left_sidebar.js" type="text/javascript"></script>
-<script src="/js/admin_searchusers.js" type="text/javascript"></script>
+<script src="/js/admin_payments.js" type="text/javascript"></script>

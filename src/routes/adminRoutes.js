@@ -16,11 +16,12 @@ router.get("/plans/edit", adminController.renderEditPlan);
 router.get("/plans/add", adminController.renderAddPlan);
 router.get("/classrooms", adminController.renderClassroom);
 router.get("/reports", adminController.renderReports);
-//router.get("/reports/motive", adminController.renderReportMotive);
+router.get("/activities", adminController.renderSchedule);
 router.get("/classrooms/add", adminController.renderAddClassroom);
 router.get("/classrooms/edit", adminController.renderEditClassroom);
 router.get("/payments", adminController.renderPayments);
 //router.get("/plans", adminController.getPlans);
 router.get("/cancel", adminController.renderCancel);
+
 
 module.exports = router;
